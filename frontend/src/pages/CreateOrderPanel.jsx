@@ -30,7 +30,7 @@ const CreateOrderPanel = () => {
         const fetchInventoryProducts = async () => {
             try {
                 setLoadingProducts(true);
-                const response = await axios.get('http://localhost:5000/api/items', {
+                const response = await axios.get('https://inventory-management-for-buisness.onrender.com/api/items', {
                     withCredentials: true
                 });
                 setProducts(response.data.items);
@@ -91,7 +91,7 @@ const CreateOrderPanel = () => {
                 quantity: item.quantity
             }));
 
-            const response = await axios.post('http://localhost:5000/api/orders', {
+            const response = await axios.post('https://inventory-management-for-buisness.onrender.com/api/orders', {
                 products: orderProducts
             }, {
                 withCredentials: true

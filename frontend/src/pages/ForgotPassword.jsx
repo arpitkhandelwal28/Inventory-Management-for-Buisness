@@ -22,7 +22,7 @@ const ForgotPasswordPage = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/forgot-password", { email });
+      const response = await axios.post("https://inventory-management-for-buisness.onrender.com/api/auth/forgot-password", { email });
 
       if (response.data.success) {
         setMessage("A reset link has been sent to your email.");

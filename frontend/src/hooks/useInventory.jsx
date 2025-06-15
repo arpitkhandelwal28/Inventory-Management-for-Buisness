@@ -168,13 +168,13 @@ export const useInventory = () => {
   };
 
   const addItem = (itemData) => 
-    performInventoryOperation('post', 'http://localhost:5000/api/items', itemData, 'Item added successfully!');
+    performInventoryOperation('post', 'https://inventory-management-for-buisness.onrender.com/api/items', itemData, 'Item added successfully!');
 
   const updateItem = (id, itemData) => 
-    performInventoryOperation('put', `http://localhost:5000/api/items/${id}`, { productId: id, ...itemData }, 'Item updated successfully!');
+    performInventoryOperation('put', `https://inventory-management-for-buisness.onrender.com/api/items/${id}`, { productId: id, ...itemData }, 'Item updated successfully!');
 
   const deleteItem = (id) => 
-    performInventoryOperation('delete', `http://localhost:5000/api/items/${id}`, id, 'Item deleted successfully!');
+    performInventoryOperation('delete', `https://inventory-management-for-buisness.onrender.com/api/items/${id}`, id, 'Item deleted successfully!');
 
   const setSearchQuery = (query) => setState(prev => ({ ...prev, searchQuery: query }));
   const setCategoryFilter = (filter) => setState(prev => ({ ...prev, categoryFilter: filter }));

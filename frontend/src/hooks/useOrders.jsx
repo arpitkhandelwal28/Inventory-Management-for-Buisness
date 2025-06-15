@@ -9,7 +9,7 @@ export const useOrders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/orders', { withCredentials: true });
+      const response = await axios.get('https://inventory-management-for-buisness.onrender.com/api/orders', { withCredentials: true });
       setOrders(response.data);
       setError(null);
     } catch (err) {

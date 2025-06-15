@@ -28,7 +28,7 @@ const ResetPasswordPage = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/auth/reset-password/${token}`,
+        `https://inventory-management-for-buisness.onrender.com/api/auth/reset-password/${token}`,
         { password }
       );
 

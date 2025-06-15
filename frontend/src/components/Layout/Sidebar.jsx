@@ -37,7 +37,7 @@ const Sidebar = () => {
       const token = localStorage.getItem('token');
       
       // Call the logout endpoint
-      await axios.post('http://localhost:5000/api/auth/logout', {}, {
+      await axios.post('https://inventory-management-for-buisness.onrender.com/api/auth/logout', {}, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

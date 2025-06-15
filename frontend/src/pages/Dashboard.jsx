@@ -30,7 +30,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/orders', { withCredentials: true });
+        const response = await axios.get('https://inventory-management-for-buisness.onrender.com/api/orders', { withCredentials: true });
         setOrders(response.data);
       } catch (err) {
         setOrdersError('Failed to fetch orders');

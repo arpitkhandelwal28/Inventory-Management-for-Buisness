@@ -31,7 +31,7 @@ const OrdersManagementPanel = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/orders', {
+      const response = await axios.get('https://inventory-management-for-buisness.onrender.com/api/orders', {
         withCredentials: true,
       });
       setOrders(response.data);
@@ -81,7 +81,7 @@ const OrdersManagementPanel = () => {
     if (window.confirm('Are you sure you want to cancel this order?')) {
       try {
         await axios.put(
-          `http://localhost:5000/api/orders/${orderId}/status`,
+          `https://inventory-management-for-buisness.onrender.com/api/orders/${orderId}/status`,
           { status: 'cancelled' },
           { withCredentials: true }
         );
@@ -104,7 +104,7 @@ const OrdersManagementPanel = () => {
     }
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/orders/${selectedOrder._id}/status`,
+        `https://inventory-management-for-buisness.onrender.com/api/orders/${selectedOrder._id}/status`,
         { status },
         { withCredentials: true }
       );

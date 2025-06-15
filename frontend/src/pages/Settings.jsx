@@ -104,7 +104,7 @@ const SettingsPanel = () => {
         setIsLoading(true);
         try {
             const response = await axios.post(
-                'http://localhost:5000/api/auth/change-password',
+                'https://inventory-management-for-buisness.onrender.com/api/auth/change-password',
                 {
                     currentPassword: newPassword.current,
                     newPassword: newPassword.new
@@ -132,7 +132,7 @@ const SettingsPanel = () => {
     const handleDeleteAccount = async () => {
         setIsLoading(true);
         try {
-            await axios.delete('http://localhost:5000/api/auth/account', {
+            await axios.delete('https://inventory-management-for-buisness.onrender.com/api/auth/account', {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }

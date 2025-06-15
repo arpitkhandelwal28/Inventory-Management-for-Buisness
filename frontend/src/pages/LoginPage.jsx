@@ -59,7 +59,7 @@ const LoginPage = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/signin",
+        "https://inventory-management-for-buisness.onrender.com/api/auth/signin",
         { email, password },
         {
           withCredentials: true, // ✅ This allows cookie to be set

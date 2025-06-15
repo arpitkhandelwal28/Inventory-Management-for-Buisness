@@ -63,7 +63,7 @@ const RegisterPage = () => {
     if (!validate()) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/signup", {
+      const response = await axios.post("https://inventory-management-for-buisness.onrender.com/api/auth/signup", {
         email: formData.email,
         password: formData.password,
       });
