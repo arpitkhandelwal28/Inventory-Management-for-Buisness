@@ -4,7 +4,9 @@ const redis = require('redis');
 const rateLimit = require('express-rate-limit');
 
 const router = express.Router();
-const client = redis.createClient();
+const client = redis.createClient({
+     url: process.env.REDIS_URL
+});
 
 client.on('error', (err) => {
     console.error('❌ Redis Client Error:', err);
