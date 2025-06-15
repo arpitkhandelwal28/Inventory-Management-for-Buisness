@@ -40,7 +40,7 @@ export const useInventory = () => {
           (sortConfig.direction === 'ascending' ? 'price_asc' : 'price_desc') : null
       };
 
-      const response = await axios.get('http://localhost:5000/api/items', { params });
+      const response = await axios.get('https://inventory-management-for-buisness.onrender.com/api/items', { params });
       
       setState(prev => ({
         ...prev,
