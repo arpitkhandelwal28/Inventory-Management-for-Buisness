@@ -1,12 +1,12 @@
-import React, { useRef, useState } from "react"; 
-import LoginPage from "./LoginPage"; 
+import React, { useRef, useState } from "react";
+import LoginPage from "./LoginPage";
 
 const Navbar = ({ scrollToSection, onLoginClick }) => {
     return (
         <nav className="bg-black text-white p-4 flex justify-between items-center font-outfit">
             <div className="flex items-center">
                 <button className="text-white text-2xl mr-4 h-9 w-9">
-                    <img src="/src/assets/logo.jpg" className="h-5" alt="Menu" />
+                    <img src="/logo.jpg" className="h-5" alt="Menu" />
                 </button>
                 <span className="text-lg font-semibold">DistribuHub</span>
             </div>
@@ -16,7 +16,7 @@ const Navbar = ({ scrollToSection, onLoginClick }) => {
             </div>
             <button
                 className="bg-white text-black px-5 py-1.5 rounded-2xl font-extralight cursor-pointer"
-                onClick={onLoginClick} 
+                onClick={onLoginClick}
             >
                 Sign In
             </button>
@@ -26,7 +26,7 @@ const Navbar = ({ scrollToSection, onLoginClick }) => {
 
 const Hero = () => {
     return (
-        <section className="bg-white text-black p-8 md:p-16 ">
+        <section className="bg-white text-black p-8 md:p-16">
             <div className="bg-black text-white p-8 md:p-28 rounded-4xl flex">
                 <div>
                     <h1 className="text-4xl md:text-6xl font-bold mb-4">Buy your dream plants</h1>
@@ -37,14 +37,14 @@ const Hero = () => {
                             className="w-full p-4 rounded-full text-black bg-white border-white"
                             placeholder="What are you looking for?"
                         />
-                        <button className="absolute flex right-1 top-1 mt-2 mr-2 bg-white items-end text-white p-4 rounded-full bg-[url('/src/assets/search.png')] hover:bg-white hover:text-black transition duration-300">
+                        <button className="absolute flex right-1 top-1 mt-2 mr-2 bg-white items-end text-white p-4 rounded-full bg-[url('/search.png')] hover:bg-white hover:text-black transition duration-300">
                             <i className="fas fa-search"></i>
                         </button>
                     </div>
                 </div>
                 <div className="mt-8">
                     <img
-                        src="/src/assets/img1.jpg"
+                        src="/img1.jpg"
                         className="relative mx-32 scale-150 bottom-10"
                         width="300"
                         height="500"
@@ -58,17 +58,16 @@ const Hero = () => {
 
 const BestSelling = () => {
     const products = [
-        { name: "Natural Plants", price: "₹ 1,400.00", img: "/src/assets/img2.jpg" },
-        { name: "Artificial Plants", price: "₹ 900.00", img: "/src/assets/img3.jpg" },
-        { name: "Decorative Artificial Plants", price: "₹ 3,500.00", img: "/src/assets/img4.jpg" },
+        { name: "Natural Plants", price: "₹ 1,400.00", img: "/img2.jpg" },
+        { name: "Artificial Plants", price: "₹ 900.00", img: "/img3.jpg" },
+        { name: "Decorative Artificial Plants", price: "₹ 3,500.00", img: "/img4.jpg" },
     ];
 
     return (
         <section className="p-8 md:p-16 flex">
             <div>
                 <h2 className="text-2xl md:text-4xl font-bold mb-4">Best Selling Plants</h2>
-                <p className="text-lg mb-8">Easiest way to a healthy life by buying <br />
-                    your favorite plants</p>
+                <p className="text-lg mb-8">Easiest way to a healthy life by buying <br /> your favorite plants</p>
                 <button className="bg-black border-black border-2 text-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300">See more</button>
             </div>
             <div className="scale-105">
@@ -130,26 +129,14 @@ const AboutUs = React.forwardRef((props, ref) => {
 
 const Categories = React.forwardRef((props, ref) => {
     const categories = [
-        {
-            name: "Natural Plants",
-            image: "/src/assets/img5.jpg",
-            description: "A collection of small potted plants on a wooden surface.",
-        },
-        {
-            name: "Plant Accessories",
-            image: "/src/assets/img6.jpg",
-            description: "Horem ipsum dolor sit amet, consectetur adipiscing elit.",
-        },
-        {
-            name: "Artificial Plants",
-            image: "/src/assets/img7.jpg",
-            description: "A collection of artificial plants in a modern living room.",
-        },
+        { name: "Natural Plants", image: "/img5.jpg", description: "A collection of small potted plants on a wooden surface." },
+        { name: "Plant Accessories", image: "/img6.jpg", description: "Horem ipsum dolor sit amet, consectetur adipiscing elit." },
+        { name: "Artificial Plants", image: "/img7.jpg", description: "A collection of artificial plants in a modern living room." },
     ];
 
     return (
-        <div ref={ref} className="bg-black ">
-            <div className="relative  py-10 pt-28 bottom-16 flex flex-col items-center bg-black">
+        <div ref={ref} className="bg-black">
+            <div className="relative py-10 pt-28 bottom-16 flex flex-col items-center bg-black">
                 <h1 className="text-4xl font-bold bg-black text-white ">Categories</h1>
                 <p className="text-gray-400 text-lg bg-black">Find what you are looking for</p>
             </div>
@@ -171,129 +158,27 @@ const Categories = React.forwardRef((props, ref) => {
     );
 });
 
-const Footer = () => {
-    return (
-        <div className="relative h-[400px] bg-black">
-            <div className="inline-flex flex-col items-center gap-6 absolute top-12 left-24">
-                <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-normal text-white text-lg tracking-[0] leading-[normal]">
-                        DistribuHub
-                    </div>
-
-                    <p className="relative w-[189px] font-medium text-[#ffffff80] text-lg tracking-[0] leading-[normal] py-2.5">
-                        We help you find your dream plant
-                    </p>
-                </div>
-
-                <div className="inline-flex items-center gap-6 relative flex-[0_0_auto]">
-                    <button className="relative w-12 h-12 rounded-3xl border border-solid border-[#ffffff80] hover:bg-gray-600 hover:text-black duration-300">
-                        <img
-                            className="absolute w-5 h-5 top-3.5 left-3.5 "
-                            alt="Gg facebook"
-                            src="https://c.animaapp.com/bqaaf23R/img/gg-facebook.svg"
-                        />
-                    </button>
-
-                    <button className="rounded-3xl border border-solid border-[#ffffff80] relative w-12 h-12 hover:bg-gray-600 hover:text-black duration-300">
-                        <img
-                            className="absolute w-5 h-5 top-[13px] left-[13px]"
-                            alt="Ri instagram fill"
-                            src="https://c.animaapp.com/bqaaf23R/img/ri-instagram-fill.svg"
-                        />
-                    </button>
-
-                    <button className="rounded-3xl border border-solid border-[#ffffff80] relative w-12 h-12 hover:bg-gray-600 hover:text-black duration-300">
-                        <img
-                            className="absolute w-5 h-4 top-[15px] left-[13px]"
-                            alt="Vector"
-                            src="https://c.animaapp.com/bqaaf23R/img/vector.svg"
-                        />
-                    </button>
-                </div>
-            </div>
-
-            <div className="inline-flex items-start gap-12 absolute top-12 left-[892px] py-12">
-                <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal]">
-                        Information
-                    </div>
-
-                    <button className="relative w-fit font-normal text-[#fffbfb80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">About</button>
-
-                    <button className="relative w-fit font-normal text-[#fff7f780] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Product
-                    </button>
-
-                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Blog
-                    </button>
-                </div>
-
-                <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal duration-300]">
-                        Company
-                    </div>
-
-                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Community
-                    </button>
-
-                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Career
-                    </button>
-
-                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Our story
-                    </button>
-                </div>
-
-                <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal] duration-300">
-                        Contact
-                    </div>
-
-                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Getting Started
-                    </button>
-
-                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Pricing
-                    </button>
-
-                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
-                        Resources
-                    </button>
-                </div>
-            </div>
-
-            <p className="absolute top-[324px] left-[97px] font-medium text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
-                2023 All Right Reserved Term of use DistribuHub
-            </p>
-        </div>
-    );
-};
-
 const Testimonials = () => {
     const testimonials = [
         {
             text: "Great selection of plants and amazing customer service!",
             name: "Alex Johnson",
             role: "Customer",
-            image: "/src/assets/pfp2.jpg",
+            image: "/pfp2.jpg",
             rating: 5,
         },
         {
             text: "Fast shipping and high-quality plants. Highly recommend!",
             name: "Adam Smith",
             role: "Customer",
-            image: "/src/assets/pfp2.jpg",
+            image: "/pfp2.jpg",
             rating: 4.5,
         },
     ];
 
     return (
         <div className="container mx-auto px-10 py-40">
-            <h1 className="text-3xl font-bold mb-4 ">
+            <h1 className="text-3xl font-bold mb-4">
                 What customers say about <span className="text-black py-5">DistribuHub?</span>
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -310,7 +195,7 @@ const Testimonials = () => {
                                 <span className="ml-2">{testimonial.rating}</span>
                             </div>
                         </div>
-                        <p className="mb-4 py-4 rounded-4xl ">{testimonial.text}</p>
+                        <p className="mb-4 py-4 rounded-4xl">{testimonial.text}</p>
                     </div>
                 ))}
             </div>
@@ -321,7 +206,7 @@ const Testimonials = () => {
 const PlantShop = () => {
     const categoriesRef = useRef(null);
     const aboutUsRef = useRef(null);
-    const [showLogin, setShowLogin] = useState(false); // State to control login page visibility
+    const [showLogin, setShowLogin] = useState(false);
 
     const scrollToSection = (section) => {
         if (section === 'categories') {
@@ -332,14 +217,14 @@ const PlantShop = () => {
     };
 
     const handleLoginClick = () => {
-        setShowLogin(true); // Show the login page
+        setShowLogin(true);
     };
 
     return (
         <div className="font-outfit">
             <Navbar scrollToSection={scrollToSection} onLoginClick={handleLoginClick} />
             {showLogin ? (
-                <LoginPage /> // Render the LoginPage if showLogin is true
+                <LoginPage />
             ) : (
                 <>
                     <Hero />
@@ -347,7 +232,6 @@ const PlantShop = () => {
                     <AboutUs ref={aboutUsRef} />
                     <Categories ref={categoriesRef} />
                     <Testimonials />
-                    <Footer />
                 </>
             )}
         </div>
