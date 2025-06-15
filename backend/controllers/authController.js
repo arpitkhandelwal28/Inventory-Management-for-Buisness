@@ -137,7 +137,7 @@ const forgotPassword = async (req, res) => {
     user.resetPasswordExpiresAt = Date.now() + 3600000; // 1 hour
     await user.save();
 
-    await sendPasswordResetEmail(user.email, `http://localhost:5173/reset-password/${resetToken}`);
+    await sendPasswordResetEmail(user.email, `https://inventory-management-for-buisness-2.onrender.com/reset-password/${resetToken}`);
 
     res.status(200).json({ success: true, message: "Password reset link sent to your email" });
   } catch (error) {
