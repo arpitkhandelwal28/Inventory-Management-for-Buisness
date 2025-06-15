@@ -5,7 +5,11 @@ const rateLimit = require('express-rate-limit');
 
 const router = express.Router();
 const client = redis.createClient({
-     url: process.env.REDIS_URL
+     url: process.env.REDIS_URL,
+    socket: {
+    tls: true,
+    rejectUnauthorized: false  // for Upstash
+  }
 });
 
 client.on('error', (err) => {
