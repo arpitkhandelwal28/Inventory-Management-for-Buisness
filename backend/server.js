@@ -12,6 +12,8 @@ const port = process.env.PORT || 5000;
 
 const db = require('./config/db');
 
+app.set('trust proxy', 1);
+
 // CORS OPTIONS FULLY FIXED:
 const corsOptions = {
     origin: [
