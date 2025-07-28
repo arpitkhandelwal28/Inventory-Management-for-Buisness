@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
+
 const authRouter = require('./routes/authRouter');
 const itemRoutes = require('./routes/itemRoutes');
 const adminRoutes = require('./routes/adminRoutes');
@@ -14,7 +15,7 @@ const db = require('./config/db');
 // ✅ Trust proxy so secure cookies work behind Render proxy
 app.set('trust proxy', 1);
 
-// ✅ CORS CONFIGURATION FULLY PRODUCTION READY
+// ✅ CORS CONFIGURATION — PRODUCTION READY
 const allowedOrigins = [
     "https://inventory-management-for-buisness-2.onrender.com",   // frontend deployed URL
     "https://inventory-management-for-buisness.onrender.com"      // backend deployed URL (for safety)
@@ -25,15 +26,28 @@ const corsOptions = {
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
+            console.log("❌ Blocked by CORS:", origin);
             callback(new Error("Not allowed by CORS"));
         }
     },
     credentials: true,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-    allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
     optionsSuccessStatus: 204
 };
 
+// ✅ CORS HEADERS (for safety, override missing headers issue in Render)
+app.use((req, res, next) => {
+    if (allowedOrigins.includes(req.headers.origin)) {
+        res.header("Access-Control-Allow-Origin", req.headers.origin);
+    }
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
+    next();
+});
+
+// ✅ Apply CORS middleware
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
 
@@ -56,5 +70,5 @@ app.get('/', (req, res) => {
 
 // ✅ Start server
 app.listen(port, () => {
-    console.log(`Server listening on port: ${port}`);
+    console.log(`🚀 Server listening on port: ${port}`);
 });

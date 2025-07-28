@@ -62,7 +62,7 @@ const LoginPage = () => {
         "https://inventory-management-for-buisness.onrender.com/api/auth/signin",
         { email, password },
         {
-          withCredentials: true, // ✅ This allows cookie to be set
+          withCredentials: true, 
         }
       );
   
