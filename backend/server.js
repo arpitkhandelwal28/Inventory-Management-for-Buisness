@@ -8,17 +8,22 @@ const itemRoutes = require('./routes/itemRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const orderRoutes = require("./routes/orderRoutes");
 
+const { connectRedis } = require('./config/redisClient'); // ✅ Redis
+const db = require('./config/db'); // ✅ DB Connection
+
 const app = express();
 const port = process.env.PORT || 5000;
-const db = require('./config/db');
 
 // ✅ Trust proxy so secure cookies work behind Render proxy
 app.set('trust proxy', 1);
 
-// ✅ CORS CONFIGURATION — PRODUCTION READY
+// ✅ Redis connection at startup
+connectRedis();
+
+// ✅ CORS CONFIGURATION
 const allowedOrigins = [
-    "https://inventory-management-for-buisness-2.onrender.com",   // frontend deployed URL
-    "https://inventory-management-for-buisness.onrender.com"      // backend deployed URL (for safety)
+    "https://inventory-management-for-buisness-2.onrender.com",  // Frontend
+    "https://inventory-management-for-buisness.onrender.com"     // Backend (optional)
 ];
 
 const corsOptions = {
@@ -36,7 +41,7 @@ const corsOptions = {
     optionsSuccessStatus: 204
 };
 
-// ✅ CORS HEADERS (for safety, override missing headers issue in Render)
+// ✅ Set headers manually (needed on Render sometimes)
 app.use((req, res, next) => {
     if (allowedOrigins.includes(req.headers.origin)) {
         res.header("Access-Control-Allow-Origin", req.headers.origin);
@@ -47,11 +52,9 @@ app.use((req, res, next) => {
     next();
 });
 
-// ✅ Apply CORS middleware
+// ✅ Middlewares
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
-// ✅ Security middlewares
+app.options("*", cors(corsOptions));
 app.use(helmet());
 app.use(cookieParser());
 app.use(express.json());
@@ -63,12 +66,13 @@ app.use('/api/items', itemRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/orders', orderRoutes);
 
-// ✅ Default test route
-app.get('/', (req, res) => {
-    res.json({ message: "This is Home route" });
+// ✅ Default route
+app.get("/", (req, res) => {
+    res.json({ message: "Inventory backend working ✅" });
 });
 
 // ✅ Start server
 app.listen(port, () => {
-    console.log(`🚀 Server listening on port: ${port}`);
+    console.log(`🚀 Server running on port ${port}`);
 });
+
