@@ -35,3 +35,14 @@ The system supports **real-time inventory updates**, **order handling**, and **d
 ```bash
 git clone https://github.com/arpitkhandelwal28/Inventory-Management-for-Buisness.git
 cd inventory-management
+
+### 2. Backend Setup
+cd backend
+npm install
+npm start
+
+### 3. Frontend Setup
+cd frontend
+npm install
+npm run dev
+
