@@ -29,20 +29,43 @@ The system supports **real-time inventory updates**, **order handling**, and **d
 
 ---
 
-## 🚀 Installation
+### Installation
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/arpitkhandelwal28/Inventory-Management-for-Buisness.git
-cd inventory-management
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/arpitkhandelwal28/Inventory-Management-for-Buisness.git
+   ```
+2. Install NPM packages:
 
-### 2. Backend Setup
-cd backend
-npm install
-npm start
+   ```sh
+   cd inventory-management
+   cd backend
+   npm install
+   cd..
+   cd frontend
+   npm install
+   ```
 
-### 3. Frontend Setup
-cd frontend
-npm install
-npm run dev
+5. Run the application backend (make sure you are in `/backend` directory) :
+
+   ```sh
+   node server.js
+   ```
+
+6. Run the application frontend (make sure you are in `/frontend` directory) :
+   ```sh
+   npm run dev
+   ```
+7. Open your browser and navigate to `http://localhost:5173` to view the app.
+
+## Please give a star ⭐ to the repository if you like it.
+
+## Contact
+
+Arpit Khandelwal - [GitHub](https://github.com/arpitkhandelwal28)
+
+Project Link: [https://github.com/arpitkhandelwal28/Inventory-Management-for-Buisness.git]
+
+
+
 
