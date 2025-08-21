@@ -49,7 +49,7 @@ The system supports **real-time inventory updates**, **order handling**, and **d
 5. Run the application backend (make sure you are in `/backend` directory) :
 
    ```sh
-   node server.js
+   npm start
    ```
 
 6. Run the application frontend (make sure you are in `/frontend` directory) :
