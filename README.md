@@ -60,17 +60,13 @@ The system supports **real-time inventory updates**, **order handling**, and **d
 
 ## 📸 Screenshots
 
-### Dashboard Overview
-<img width="1307" height="633" alt="Screenshot 2025-08-21 115423" src="https://github.com/user-attachments/assets/29bc2d6a-9dda-4012-a8bc-79e4cb2ffe48" />
+| Dashboard Overview | Inventory Management |
+|--------------------|----------------------|
+| <img width="500" alt="Dashboard" src="https://github.com/user-attachments/assets/29bc2d6a-9dda-4012-a8bc-79e4cb2ffe48" /> | <img width="500" alt="Inventory" src="https://github.com/user-attachments/assets/a98a56c9-5c9a-491f-81a6-564494556275" /> |
 
-### Inventory Management
-<img width="1326" height="636" alt="Screenshot 2025-08-21 115359" src="https://github.com/user-attachments/assets/a98a56c9-5c9a-491f-81a6-564494556275" />
-
-### Orders Management
-<img width="1287" height="606" alt="Screenshot 2025-08-21 115447" src="https://github.com/user-attachments/assets/6278af48-9744-49ea-a8d7-6335f889d5bf" />
-
-### Suppliers
-<img width="1341" height="585" alt="Screenshot 2025-08-21 115504" src="https://github.com/user-attachments/assets/a9381be7-7fb5-4d21-8661-cd90b1decf76" />
+| Orders Management | Suppliers |
+|-------------------|-----------|
+| <img width="500" alt="Orders" src="https://github.com/user-attachments/assets/6278af48-9744-49ea-a8d7-6335f889d5bf" /> | <img width="500" alt="Suppliers" src="https://github.com/user-attachments/assets/a9381be7-7fb5-4d21-8661-cd90b1decf76" /> |
 
 ## Please give a star ⭐ to the repository if you like it.
 
